@@ -1,0 +1,193 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove animations for people who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Utility classes  */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.grid {
+    display: grid;
+    gap: var(--gap, 1rem);
+}
+
+.container {
+    padding-inline: 1.5em;
+    margin-inline: auto;
+    max-width: 60rem;
+}
+
+/* screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:root {
+    --clr-white:hsl(0, 0%, 100%);
+    --clr-stone-100:hsl(30, 54%, 90%);
+    --clr-stone-150:hsl(30, 18%, 87%);
+    --clr-stone-600:hsl(30, 10%, 34%);
+    --clr-stone-900:hsl(24, 5%, 18%);
+    --clr-brown-800:hsl(14, 45%, 36%);
+    --clr-rose-800:hsl(332, 51%, 32%);
+    --clr-rose-50:hsl(330, 100%, 98%);
+
+    --fs: 1rem;
+
+    --ff-young: "Young Serif", serif;
+    --ff-outfit: "Outfit", sans-serif;
+
+    --fw-400: 400;
+    --fw-600: 600;
+    --fw-700: 700;
+}
+
+body {
+    font-family: var(--ff-outfit);
+}
+
+h1,
+h2 {
+    font-family: var(--ff-young);
+}
+
+h2 {
+    color: var(--clr-brown-800);
+}
+
+.meta-card * + *,
+.ingredients * + *,
+.instructions * + *  {
+    margin-top: 1rem;
+}
+
+main,
+section {
+    margin-bottom: 2rem;
+}
+
+span {
+    font-weight: var(--fw-600);
+}
+
+.recipe-image {
+    margin: 0 auto;
+    max-height: 26rem;
+}
+
+.main-content > * {
+    margin-top: 1.6rem;
+}
+
+.meta-card {
+    background-color: var(--clr-rose-50);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.meta-card h3 {
+    color: var(--clr-rose-800);
+}
+
+.instructions ul {
+    list-style-type: decimal;
+    /* color: var(--clr-brown-800); */
+}
+
+.nutrition > * {
+    margin-bottom: 1rem;
+}
+
+.nutrition ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    margin: 0;
+}
+
+.nutrition ul li:nth-child(2) {
+    font-weight: var(--fw-600);
+    color: var(--clr-brown-800);
+}
